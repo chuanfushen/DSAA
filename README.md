@@ -8,11 +8,11 @@ prepare the test case file(tests.txt), for each test case, separated by line.
 # step 2
 compile Sum.java by command 
 ```
-    javac Sum.java
+javac Sum.java
 ```
 # step 3
 excute program by command
 ```
-    java Sum.java tests.txt
+java Sum.java tests.txt
 ```
 Then we will get output
