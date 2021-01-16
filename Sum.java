@@ -12,9 +12,11 @@ public class Sum{
         try {
             File file = new File(args[0]);
             Scanner scanner = new Scanner(file);
-            while (scanner.hasNext()){
-                int x = scanner.nextInt();
-                int y = scanner.nextInt(); 
+            while (scanner.hasNextLine()){
+                String line = scanner.nextLine();
+                String[] array = line.split(" ");
+                int x = Integer.parseInt(array[0]);
+                int y = Integer.parseInt(array[1]);
                 System.out.format("The sum of %d and %d is: %d\n", x, y, x+y);
             }
         } catch (Exception e) {
