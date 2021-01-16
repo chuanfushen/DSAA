@@ -13,6 +13,6 @@ javac Sum.java
 # step 3
 excute program by command
 ```
-java Sum.java tests.txt
+java Sum tests.txt
 ```
 Then we will get output
