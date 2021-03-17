@@ -2,20 +2,24 @@
 import java.util.Arrays;
 
 public class MergeSort {
+    // To sort an unSortedArray
     public int[] sortArray(int[] nums) {
         if (nums.length<=1){
             return nums;
         }
-        int mid = nums.length/2;
-        int [] left = sortArray(subArray(nums,0,mid-1));
-        int [] right = sortArray(subArray(nums,mid,nums.length-1));
-        int [] result = mergeTwoSortedArray(left,right);
+        int mid = nums.length/2;//find the middle index of nums
+        int [] left = sortArray(subArray(nums,0,mid-1)); // separately sort the left array from 0 to mid-1
+        int [] right = sortArray(subArray(nums,mid,nums.length-1)); // sort the right part from mid to the last.
+        int [] result = mergeTwoSortedArray(left,right); // merge two sorted array,  left and right array are already sorted after Fuction sortArray().
         return result;
     }
+    
+    // Get the sub-array of array from beg to end. including element of end index.
     public int[] subArray(int[] array, int beg, int end) {
         return Arrays.copyOfRange(array, beg, end + 1);
     }
 
+    // This function is to merge two unsorted array.
     public int[] mergeTwoSortedArray(int[] first,int[] second){
         int index_first = 0;
         int index_second = 0;
@@ -32,6 +36,8 @@ public class MergeSort {
                 cnt++;
             }
         }
+        
+        //after above while loop, there may leave few element on first or second array. Put them on result array.
         while (index_first < first.length) {
             result[cnt] = first[index_first];
             index_first++;
